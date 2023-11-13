@@ -1,0 +1,6 @@
+docs/
+backend/db.sqlite3
+backend/env/
+backend/cakery/__pycache__/
+backend/shop/__pycache__/
+backend/shop/migrations/
