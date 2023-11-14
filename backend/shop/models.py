@@ -5,13 +5,15 @@ class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True)
     full_name = models.CharField(max_length=300)
     email = models.EmailField()
-    #TODO: Add Profile Photo
+
+def path_to_image(instance, filename):
+    return f"items/{instance.category}/{filename}"
 
 class Item(models.Model):
     name = models.CharField(max_length=200)
     category = models.CharField(max_length=200)
     price = models.FloatField()
-    #TODO: Add Image Field for Item
+    image = models.ImageField(upload_to=path_to_image)
 
     def __str__(self) -> str:
         return self.name
