@@ -1,0 +1,9 @@
+Home page
+{% for item in items %}
+<ul>
+    <li>{{item.name}}</li>
+    <li>{{item.category}}</li>
+    <li>{{item.price}}</li>
+    <li><img src='{{item.image.url}}' alt="" height="100"></li>
+</ul>
+{% endfor %}

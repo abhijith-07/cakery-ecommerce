@@ -1,12 +1,10 @@
 from django.shortcuts import render
-from rest_framework.views import APIView
-from rest_framework import viewsets
-from rest_framework.response import Response
-from rest_framework.decorators import api_view
+from django.views import View
+from .models import Item
 
-from .models import Customer, Item
-from .serializers import ItemSerializer
+class IndexView(View):
+    template = "shop/index.html"
 
-class ItemViewSet(viewsets.ModelViewSet):
-    serializer_class = ItemSerializer
-    queryset = Item.objects.all()
+    def get(self, request, *args, **kwargs):
+        items = Item.objects.all()
+        return render(request, self.template, {'items':items})        
