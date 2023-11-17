@@ -1,0 +1,13 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/categoryStyle.css' %}">
+
+<div class="products-list">
+    {% for category in categories %}
+    <a href="{% url 'items' category.id %}">
+        <div class="cards">
+            <div class="image"><img src='{{category.image.url}}' alt=""></div>
+            <div class="title">{{category.name}}</div>
+        </div>
+    </a>
+    {% endfor %}
+</div>

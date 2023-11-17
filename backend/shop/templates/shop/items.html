@@ -1,0 +1,16 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/itemStyle.css' %}">
+
+<div class="items-list">
+    {% for item in items %}
+    <a href="">
+        <div class="cards">
+            <div class="image">
+              <img src="{{item.image.url}}" alt=""/>
+            </div>
+            <div class="price">{{item.price}} Per kg</div>
+            <div class="title">{{item.name}}</div>
+        </div>
+    </a>
+    {% endfor %}
+</div>

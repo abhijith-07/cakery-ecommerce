@@ -1,0 +1,43 @@
+body{
+    background-color: rgb(50, 50, 207);
+    width: 100%;
+}
+
+.items-list {
+    position: relative;
+}
+
+.cards {
+    background-color: white;
+    display: inline-block;
+    width: 25%;
+    height: 40%;  
+    border-radius: 8px;
+    margin: 20px;
+    position: relative;
+}
+
+.image img {
+    width: 100%;
+    height: 85%;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.title {
+    text-align: center;
+    padding: 10px;
+}
+
+.price {
+    background-color: yellow;
+    padding: 7px;
+    position: absolute;
+    top: 70%;
+    right: 0;
+    margin: 0;
+}
+
+.cards:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 10px black;
+}

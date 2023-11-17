@@ -6,12 +6,22 @@ class Customer(models.Model):
     full_name = models.CharField(max_length=300)
     email = models.EmailField()
 
+def path_to_category_image(instance, filename):
+    return f"category/{instance.name}/{filename}"
+
+class Category(models.Model):
+    name = models.CharField(max_length=200)
+    image = models.ImageField(upload_to=path_to_category_image)
+
+    def __str__(self) -> str:
+        return self.name
+
 def path_to_image(instance, filename):
     return f"items/{instance.category}/{filename}"
 
 class Item(models.Model):
     name = models.CharField(max_length=200)
-    category = models.CharField(max_length=200)
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, blank=True, null=True, default=None)
     price = models.FloatField()
     image = models.ImageField(upload_to=path_to_image)
 
