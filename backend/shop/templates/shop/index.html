@@ -1,15 +1,22 @@
-Navbar
+{% extends './base.html' %}
+{% load static %}
 
-Cake image and Hero title
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock extrahead %}
 
-The fascinating story of the most lovedbakery brand in Kerala
-
-Our Signature Products
-- Each Cakes with images and link to that cake
-
-Why our products are the best?
-
-Looking for the best bakers in the town with quality products?
-- Order Now button
-
-Footer
+{% block content %}
+    <div class="container">
+        <div class="gallery-container">
+            <div class="heading">
+                <div class="header">{{ galleries.first.header_line }}</div>
+                <div class="description">{{ galleries.first.description }}</div>
+            </div>
+            {% for gallery in galleries %}
+            <!-- <div class="heading">{{ gallery.header_line }}</div> -->
+            <img src={{gallery.image.url}} alt="">
+            {% endfor %}
+        </div>
+    </div>
+    
+{% endblock content %}

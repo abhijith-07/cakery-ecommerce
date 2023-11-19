@@ -1,6 +1,11 @@
+{% extends './base.html' %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/categoryStyle.css' %}">
 
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/categoryStyle.css' %}">
+{% endblock extrahead %}
+
+{% block content %}
 <div class="products-list">
     {% for category in categories %}
     <a href="{% url 'items' category.id %}">
@@ -11,3 +16,4 @@
     </a>
     {% endfor %}
 </div>
+{% endblock content %}

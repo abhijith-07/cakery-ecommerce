@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+/* TODO: Move * and body to basecss */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.gallery-container {
+    width: 100vw;
+    height: 90vh;
+    background-color: #bc6100;
+    position: relative;
+}
+
+.gallery-container .heading {
+    width: 50%;
+    position: absolute;
+    top: 40%;
+    margin: 0 5em;
+}
+
+.header {
+    font-weight: 700;
+    font-size: 2.15rem;
+    font-family: 'Open Sans', sans-serif;
+    color: whitesmoke;
+}
+
+.description {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #d5bfa8;
+    margin-top: 1em;
+    line-height: 1.5em;
+    letter-spacing: .15em;
+    word-spacing: .25em;
+}
+
+.gallery-container img {
+    width: 27%;
+    height: 75%;
+    position: absolute;
+    top: 8%;
+    right: 0;
+    margin-right: 140px;
+}

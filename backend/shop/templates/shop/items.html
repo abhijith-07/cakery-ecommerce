@@ -1,16 +1,21 @@
+{% extends './base.html' %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/itemStyle.css' %}">
 
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/itemStyle.css' %}">
+<title>{{category.name}}|Cakery</title>
+{% endblock extrahead %}
+
+{% block content%}
 <div class="items-list">
     {% for item in items %}
-    <a href="">
+    <a href="#">
         <div class="cards">
-            <div class="image">
-              <img src="{{item.image.url}}" alt=""/>
-            </div>
+            <div class="image"><img src="{{item.image.url}}"></div>
             <div class="price">{{item.price}} Per kg</div>
             <div class="title">{{item.name}}</div>
         </div>
     </a>
     {% endfor %}
 </div>
+{% endblock content %}

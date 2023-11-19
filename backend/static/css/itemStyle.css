@@ -1,12 +1,3 @@
-body{
-    background-color: rgb(50, 50, 207);
-    width: 100%;
-}
-
-.items-list {
-    position: relative;
-}
-
 .cards {
     background-color: white;
     display: inline-block;
@@ -19,7 +10,7 @@ body{
 
 .image img {
     width: 100%;
-    height: 85%;
+    height: 300px;
     border-radius: 8px 8px 0px 0px;
 }
 
