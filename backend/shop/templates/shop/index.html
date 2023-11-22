@@ -1,22 +1,57 @@
-{% extends './base.html' %}
-{% load static %}
-
-{% block extrahead %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-{% endblock extrahead %}
-
-{% block content %}
-    <div class="container">
-        <div class="gallery-container">
-            <div class="heading">
-                <div class="header">{{ galleries.first.header_line }}</div>
-                <div class="description">{{ galleries.first.description }}</div>
-            </div>
-            {% for gallery in galleries %}
-            <!-- <div class="heading">{{ gallery.header_line }}</div> -->
-            <img src={{gallery.image.url}} alt="">
-            {% endfor %}
-        </div>
+{% extends './base.html' %} {% load static %} {% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+{% endblock extrahead %} {% block content %}
+<div class="container">
+  <div class="gallery-container">
+    {% for gallery in galleries %}
+    <div class="gallery-item">
+      <div class="heading">
+        <div class="header">{{ gallery.header_line }}</div>
+        <div class="description">{{ gallery.description }}</div>
+      </div>
+      <div class="image">
+        <img src="{{ gallery.image.url }}" alt="" />
+      </div>
     </div>
-    
+    {% endfor %}
+  </div>
+
+  <div class="panel1">
+    <h2>
+      Dive into the captivating narrative of Kerala's beloved bakery sensation –
+      <span>Cakery</span>
+    </h2>
+    <p>
+      Born from visionary minds, Cakery has transformed the baking scene in just
+      five years. We redefine indulgence with live cake making, premium
+      materials, and exclusive products. Our journey is fueled by unwavering
+      passion, changing how people enjoy bakery delights.
+    </p>
+    <p>
+      Quality defines Cakery—cutting-edge tools, premium ingredients, hygiene,
+      skilled bakers, and global recipes. Our global exploration enriches our
+      offerings, ensuring unmatched quality in Kerala. Discover our range, from
+      delectable cakes to personalized treats. Immerse yourself in the
+      extraordinary world of Cakery
+    </p>
+  </div>
+  <div class="panel2">
+    <h2>Our Signature Products</h2>
+    <p>
+      Elevating sweet cravings with exceptional quality, premium ingredients,
+      expert chefs, and globally inspired recipes. Experience satisfaction
+      beyond expectation with our irresistible creations.
+    </p>
+    <div class="products">
+        {% for product in products %}
+        <div class="product-card">
+            <img src="{{product.image.url}}" alt="">
+            <h3 class="product-name">{{product.name}}</h3>
+        </div>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script src="{% static 'js/scripts.js' %}"></script>
 {% endblock content %}

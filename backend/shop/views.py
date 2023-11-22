@@ -8,8 +8,9 @@ class IndexView(View):
 
     def get(self, request, *args, **kwargs):
         gallery = Gallery.objects.all()
-        context = {'galleries':gallery}
-        return render(request, self.template, {'galleries':gallery})  
+        products = Category.objects.all()
+        context = {'galleries':gallery, 'products':products}
+        return render(request, self.template, context=context)  
 
 class CategoryView(View):
     template = "shop/category.html"
