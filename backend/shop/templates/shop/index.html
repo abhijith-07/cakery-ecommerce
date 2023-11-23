@@ -1,5 +1,6 @@
 {% extends './base.html' %} {% load static %} {% block extrahead %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {% endblock extrahead %} {% block content %}
 <div class="container">
   <div class="gallery-container">
@@ -50,7 +51,10 @@
         </div>
         {% endfor %}
     </div>
+    <button class="btn-all-products"><a href="{% url 'products' %}">View All Products</a></button>
   </div>
+  
+  {% include '../components/footer.html' %}
 </div>
 
 <script src="{% static 'js/scripts.js' %}"></script>

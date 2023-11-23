@@ -22,18 +22,19 @@ const productSlide = document.querySelectorAll('.product-card');
 productSlide[0].classList.add('active-product')
 productSlide[1].classList.add('active-product')
 productSlide[2].classList.add('active-product')
-let currentProduct = 0
+let currentProduct = 3
+let removeProduct = 0
 
-function setProductsActive(index) {
-    let removeIndex = (index - 2) % productSlide.length
-    productSlide[removeIndex].classList.remove('active-product');
-    productSlide[index].classList.add('active-product')
+function setProductsActive(currentProduct, removeProduct) {
+    productSlide[currentProduct].classList.add('active-product')
+    productSlide[removeProduct].classList.remove('active-product');
 }
 
+
 function nextProduct() {
+    setProductsActive(currentProduct, removeProduct)
     currentProduct = (currentProduct + 1) % productSlide.length;
-    setProductsActive(currentProduct)
-    console.log("next product")
+    removeProduct = (removeProduct + 1) % productSlide.length
 }
 
 const productsDiv = document.querySelector('.products');
@@ -42,7 +43,7 @@ const observer = new IntersectionObserver(
     (entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                setInterval(nextProduct, 3000);
+                setInterval(nextProduct, 2500);
                 observer.disconnect();
             }
         });

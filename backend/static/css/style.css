@@ -7,6 +7,20 @@
     font-family: sans-serif;
 }
 
+body::-webkit-scrollbar {
+    width: .2em;
+    height: .2rem;
+  }
+   
+  body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+   
+  body::-webkit-scrollbar-thumb {
+    background-color: #bc6100;
+    outline: 1px solid #d0781b;
+  }
+
 .container {
     width: 100vw;
     height: 100vh;
@@ -133,7 +147,7 @@
 .panel2{
     display: block;
     background-color: #bc6100;
-    padding: 5rem;
+    padding:  4rem 5rem;
 }
 
 .panel2 h2 {
@@ -160,9 +174,13 @@
 .products .product-card {
     width: 350px;
     height: 445px;
-    display: inline-block;
+    display: none;
     margin: 2.5em;
     border-radius: 50px;
+}
+
+.products .product-card.active-product {
+    display: inline-block;
 }
 
 .product-card:hover {
@@ -187,4 +205,32 @@
     padding: 12.5px;
     font-weight: 700;
     letter-spacing: .15em;
+}
+
+.btn-all-products {
+    margin: auto auto;
+    position: relative;
+    display: block;
+    background-color: #bc6100;
+    border: none;
+    border: 2px solid #ffae57;
+    border-radius: 1rem;
+    font-size: 1.15rem;
+    color: #fff2e4;
+    text-decoration: none;
+}
+
+.btn-all-products:hover {
+    background-color: #d0781b;
+    border-color: #fff2e4;
+    color: #fff2e4;
+    cursor: pointer;
+}
+
+.btn-all-products a {
+    text-decoration: none;
+    color: #fff2e4;
+    position: relative;
+    display: block;
+    padding: 1rem 1.5rem;
 }
