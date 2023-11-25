@@ -1,0 +1,66 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/cartStyle.css' %}">
+{% endblock extrahead%}
+
+{% block content %}
+<!-- Padding: 1rem -->
+<div class="cart">
+    <div class="cart-wrapper"> 
+        <div class="list-wrapper">
+            <h6>Shopping Cart</h6>
+            <div class="list-details">
+                <img src="{% static 'images/gallery/1.jpg' %}" alt="" class="col product-image">
+                <div class="col product">
+                    <h6 class="product-name">Chocolate Cake</h6>
+                    <p class="product-id">#6497397</p>
+                </div>
+                <div class="col item-counter">
+                    <button class="decrease">-</button>
+                    <input type="number" name="" id="">
+                    <button class="increase">+</button>
+                </div>
+                <p class="col price">Rs. 54</p>
+                <button class="col delete">x</button>
+            </div>
+            <div class="list-details">
+                <img src="" alt="" class="col product-image">
+                <div class="col product">
+                    <h6 class="product-name">Chocolate Cake</h6>
+                    <p class="product-id">#6497397</p>
+                </div>
+                <div class="col item-counter">
+                    <button class="decrease">-</button>
+                    <input type="number" name="" id="">
+                    <button class="increase">+</button>
+                </div>
+                <p class="col price">Rs. 54</p>
+                <button class="col delete">x</button>
+            </div>
+            <div class="list-details">
+                <img src="" alt="" class="col product-image">
+                <div class="col product">
+                    <h6 class="product-name">Chocolate Cake</h6>
+                    <p class="product-id">#6497397</p>
+                </div>
+                <div class="col item-counter">
+                    <button class="decrease">-</button>
+                    <input type="number" name="" id="">
+                    <button class="increase">+</button>
+                </div>
+                <p class="col price">Rs. 54</p>
+                <button class="col delete">x</button>
+            </div>
+    
+            <button class="back"><span>back-arrow</span> Continue Shopping</button>
+            <p class="total">Subtotal: <span>Rs.554</span></p>
+        </div>
+        <div class="card-details">
+            <h6>Card Details</h6>
+            <div class="card-graphics"></div>
+        </div>
+    </div>
+</div>
+{% endblock content%}

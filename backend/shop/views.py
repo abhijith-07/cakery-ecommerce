@@ -26,3 +26,9 @@ class ItemView(View):
         category = Category.objects.get(id=id)
         items = Item.objects.filter(category=category)
         return render(request, self.template, {'items':items, 'category':category})
+
+class CartView(View):
+    template = "shop/cart.html"
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template)

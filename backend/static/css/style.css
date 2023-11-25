@@ -1,26 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
-/* TODO: Move * and body to basecss */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
-
-body::-webkit-scrollbar {
-    width: .2em;
-    height: .2rem;
-  }
-   
-  body::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  }
-   
-  body::-webkit-scrollbar-thumb {
-    background-color: #bc6100;
-    outline: 1px solid #d0781b;
-  }
-
 .container {
     width: 100vw;
     height: 100vh;
@@ -57,7 +34,7 @@ body::-webkit-scrollbar {
     font-weight: 700;
     font-size: 2.15rem;
     font-family: 'Open Sans', sans-serif;
-    color: #fff2e4;
+    color: #ededed;
 }
 
 .description {
@@ -153,7 +130,7 @@ body::-webkit-scrollbar {
 .panel2 h2 {
     text-align: center;
     font-size: 2rem;
-    color: #fff2e4;
+    color: #ededed;
 }
 
 .panel2 p {
@@ -198,7 +175,7 @@ body::-webkit-scrollbar {
 .product-card h3 {
     position: relative;
     top: -50px;
-    background-color: #fff2e4;
+    background-color: #ededed;
     border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
     height: 50px;
@@ -216,20 +193,20 @@ body::-webkit-scrollbar {
     border: 2px solid #ffae57;
     border-radius: 1rem;
     font-size: 1.15rem;
-    color: #fff2e4;
+    color: #ededed;
     text-decoration: none;
 }
 
 .btn-all-products:hover {
     background-color: #d0781b;
-    border-color: #fff2e4;
-    color: #fff2e4;
+    border-color: #ededed;
+    color: #ededed;
     cursor: pointer;
 }
 
 .btn-all-products a {
     text-decoration: none;
-    color: #fff2e4;
+    color: #ededed;
     position: relative;
     display: block;
     padding: 1rem 1.5rem;
