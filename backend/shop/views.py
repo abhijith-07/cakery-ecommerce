@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import View
-from .models import Item, Category, Gallery
+from .models import Item, Category, Gallery, OrderItem
 
 
 class IndexView(View):
@@ -31,4 +31,5 @@ class CartView(View):
     template = "shop/cart.html"
 
     def get(self, request, *args, **kwargs):
-        return render(request, self.template)
+        cart = OrderItem.objects.all()
+        return render(request, self.template, {'cart': cart})
