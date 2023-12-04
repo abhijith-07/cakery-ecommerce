@@ -6,6 +6,9 @@ class Customer(models.Model):
     full_name = models.CharField(max_length=300)
     email = models.EmailField()
 
+    def __str__(self) -> str:
+        return self.user.username
+
 def path_to_category_image(instance, filename):
     return f"category/{instance.name}/{filename}"
 
@@ -27,6 +30,7 @@ class Item(models.Model):
 
     def __str__(self) -> str:
         return self.name
+    
 
 class OrderItem(models.Model):
     item = models.ForeignKey(Item, on_delete=models.SET_NULL, blank=True, null=True)
@@ -34,7 +38,7 @@ class OrderItem(models.Model):
     added_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        return self.item.name
 
     @property
     def get_total_price(self):
@@ -49,7 +53,7 @@ class Order(models.Model):
     transaction_id = models.CharField(max_length=200, null=True)
 
     def __str__(self) -> str:
-        return self.id
+        return f"Order: {self.transaction_id}"
 
 class ShippingAddress(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, blank=True, null=True)
