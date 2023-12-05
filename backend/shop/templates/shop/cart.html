@@ -13,7 +13,7 @@
             <h6>Shopping Cart</h6>
             {% for item in cart %}
             <div class="list-details">
-                <img src="{{item.item.image.url}}" alt="" class="col product-image">
+                <div class="col product-image"><img src="{{item.item.image.url}}" alt=""></div>
                 <div class="col product">
                     <h6 class="product-name">{{item}}</h6>
                     <p class="product-id">#{{item.item.id}}</p>
@@ -25,7 +25,7 @@
                     <button class="increase">+</button>
                 </div>
                 <p class="col total-price">Rs. {{item.get_total_price}}</p>
-                <button class="col delete">x</button>
+                <div class="col"><button class="delete">x</button></div>
             </div>    
             {% endfor %}
             <button class="back"><span>back-arrow</span> Continue Shopping</button>

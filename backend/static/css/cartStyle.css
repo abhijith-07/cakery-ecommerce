@@ -26,16 +26,41 @@
 .list-details {
     width: 90%;
     height: 23%;
-    outline: #ededed solid 1px;
-    margin: 1rem;
-    display: block;
+    background-color: #2d1800;
+    box-shadow: 2px 1px 5px #2d1800;
+    border-radius: 1em;
+    margin: 1em;
+    display: table;
     padding: 1em;
 }
 
 .list-details .col {
-    display: inline-block;
-    margin: auto;
+    display: table-cell;
+    vertical-align: middle;
+    width: 15%;
     position: relative;
+    text-align: center;
+}
+
+.list-details .item-counter input {
+    width: 1.5rem;
+    height: 1.5rem;
+    text-align: center;
+    padding: 0;
+    appearance: none;
+    border: none;
+}
+
+/* Hide arrows from input number */
+/* Chrome, Safari, Edge, Opera */
+.list-details .item-counter input::-webkit-outer-spin-button,
+.list-details .item-counter input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+.list-details .item-counter input[type=number] {
+  -moz-appearance: textfield;
 }
 
 .list-wrapper button.back {
@@ -52,8 +77,18 @@
 
 .list-details img {
     height: 4rem;
-    width: 4rem;
     object-fit: cover;
+}
+
+.col .delete {
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    font-size: 1.8rem;
+    background-color: #bc1600;
+    color: #ededed;
+    border-radius: 100%;
+    cursor: pointer;
 }
 
 .card-details {
