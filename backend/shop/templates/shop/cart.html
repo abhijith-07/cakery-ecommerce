@@ -20,9 +20,9 @@
                 </div>
                 <p class="col price">Rs. {{item.item.price}}</p>
                 <div class="col item-counter">
-                    <button class="btn-decrease">-</button>
-                    <input type="number" name="" id="{{item.id}}" value="{{item.quantity}}">
-                    <button class="btn-increase">+</button>
+                    <button class="btn-decrease" onclick="decreaseCount('{{item.id}}')">-</button>
+                    <input type="number" name="" id="item-{{item.id}}" value={{item.quantity}} class="item-count">
+                    <button class="btn-increase" onclick="increaseCount('{{item.id}}')">+</button>
                 </div>
                 <p class="col total-price">Rs. {{item.get_total_price}}</p>
                 <div class="col"><button class="delete">x</button></div>
