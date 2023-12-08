@@ -1,3 +1,5 @@
+import json
+from django.http import JsonResponse
 from django.shortcuts import render
 from django.views import View
 from .models import Item, Category, Gallery, OrderItem
@@ -33,3 +35,10 @@ class CartView(View):
     def get(self, request, *args, **kwargs):
         cart = OrderItem.objects.all()
         return render(request, self.template, {'cart': cart})
+    
+    def post(self, request, *args, **kwargs):
+        data = json.loads(request.body.decode('utf-8'))
+        order_item = OrderItem.objects.get(id=data["id"])
+        order_item.quantity = data["quantity"]
+        order_item.save()
+        return JsonResponse({'data': data})
