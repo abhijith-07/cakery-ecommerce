@@ -41,4 +41,9 @@ class CartView(View):
         order_item = OrderItem.objects.get(id=data["id"])
         order_item.quantity = data["quantity"]
         order_item.save()
-        return JsonResponse({'data': data})
+        data = {
+            'id': order_item.id,
+            'quantity': order_item.quantity,
+            'price': order_item.get_total_price
+        }
+        return JsonResponse(data)

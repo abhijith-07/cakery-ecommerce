@@ -24,7 +24,7 @@
                     <input type="number" name="" id="item-{{item.id}}" value={{item.quantity}} class="item-count">
                     <button class="btn-increase" onclick="increaseCount('{{item.id}}')">+</button>
                 </div>
-                <p class="col total-price">Rs. {{item.get_total_price}}</p>
+                <p class="col total-price" id="price-{{item.id}}">Rs. {{item.get_total_price}}</p>
                 <div class="col"><button class="delete">x</button></div>
             </div>    
             {% endfor %}

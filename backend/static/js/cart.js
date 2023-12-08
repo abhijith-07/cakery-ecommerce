@@ -36,7 +36,8 @@ async function decreaseCount(id, item) {
         })
         .then((res)=>res.json())
         .then((data)=>{
-            document.querySelector(`#item-${id}`).value = data.data.quantity
+            document.querySelector(`#item-${id}`).value = data.quantity
+            document.querySelector(`#price-${id}`).innerHTML = `Rs. ${data.price}.0`
         })
     }
 }
@@ -58,6 +59,7 @@ async function increaseCount(id) {
     })
     .then((res)=>res.json())
     .then((data)=>{
-        document.querySelector(`#item-${id}`).value = data.data.quantity
+        document.querySelector(`#item-${id}`).value = data.quantity
+        document.querySelector(`#price-${id}`).innerHTML = `Rs. ${data.price}.0`
     })
 }
