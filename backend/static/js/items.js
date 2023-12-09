@@ -1,4 +1,4 @@
-var url = 'http://127.0.0.1:8000/shop/cart/'
+var url = '/shop/cart/'
 
 function getCookie(name) {
     let cookieValue = null;
