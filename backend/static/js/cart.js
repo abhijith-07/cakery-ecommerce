@@ -24,7 +24,7 @@ async function decreaseCount(id, item) {
     if (count > 1){
         count -= 1
         await fetch(url, {
-            method: 'POST',
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
                 'X-CSRFToken': csrftoken,
@@ -47,7 +47,7 @@ async function increaseCount(id) {
     var count = Number(document.querySelector(`#item-${id}`).value)
     count += 1
     await fetch(url, {
-        method: 'POST',
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
             'X-CSRFToken': csrftoken,
@@ -69,7 +69,7 @@ async function deleteItem(id) {
     const cartItem = document.querySelector(`#cart-item-${id}`);
     try {
         const response = await fetch(url, {
-            method: "DELETE",
+            method: "PUT",
             headers: {
                 'Content-Type': 'application/json',
                 'X-CSRFToken': csrftoken,

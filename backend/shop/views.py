@@ -36,7 +36,7 @@ class CartView(View):
         cart = OrderItem.objects.all()
         return render(request, self.template, {'cart': cart})
     
-    def post(self, request, *args, **kwargs):
+    def put(self, request, *args, **kwargs):
         data = json.loads(request.body.decode('utf-8'))
         order_item = OrderItem.objects.get(id=data["id"])
         order_item.quantity = data["quantity"]
