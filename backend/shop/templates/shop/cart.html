@@ -12,7 +12,7 @@
         <div class="list-wrapper">
             <h6>Shopping Cart</h6>
             {% for item in cart %}
-            <div class="list-details">
+            <div class="list-details" id="cart-item-{{item.id}}">
                 <div class="col product-image"><img src="{{item.item.image.url}}" alt=""></div>
                 <div class="col product">
                     <h6 class="product-name">{{item}}</h6>
@@ -25,7 +25,7 @@
                     <button class="btn-increase" onclick="increaseCount('{{item.id}}')">+</button>
                 </div>
                 <p class="col total-price" id="price-{{item.id}}">Rs. {{item.get_total_price}}</p>
-                <div class="col"><button class="delete">x</button></div>
+                <div class="col"><button class="delete" id="delete-{{item.id}}" onclick="deleteItem('{{item.id}}')">x</button></div>
             </div>    
             {% endfor %}
             <button class="back"><span>back-arrow</span> Continue Shopping</button>

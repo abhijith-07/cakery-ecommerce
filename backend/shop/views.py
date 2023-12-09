@@ -47,3 +47,9 @@ class CartView(View):
             'price': order_item.get_total_price
         }
         return JsonResponse(data)
+    
+    def delete(self, request, *args, **kwargs):
+        data = json.loads(request.body.decode('utf-8'))
+        delete_order_item = OrderItem.objects.get(id=data['id'])
+        delete_order_item.delete()
+        return JsonResponse({'deletedId': data['id']})
