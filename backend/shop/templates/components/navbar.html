@@ -26,9 +26,15 @@
         color: #ededed;
     }
 
+    span.number {
+        background-color: #ededed;
+        border-radius: 1em;
+        padding: .2em;
+    }
+
 </style>
 <div class="navbar">
     <a href="" class="nav-item">Home</a>
     <a href="{% url 'products' %}" class="nav-item">Products</a>
-    <a href="{% url 'cart' %}" class="nav-item">Cart</a>
+    <a href="{% url 'cart' %}" class="nav-item">Cart <span class="number">0</span></a>
 </div>

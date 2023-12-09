@@ -73,4 +73,4 @@ class Gallery(models.Model):
     image = models.ImageField(upload_to='gallery/')
 
     def __str__(self) -> str:
-        return self.hearder_line
+        return self.header_line

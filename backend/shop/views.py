@@ -36,6 +36,15 @@ class CartView(View):
         cart = OrderItem.objects.all()
         return render(request, self.template, {'cart': cart})
     
+    def post(self, request, *args, **kwargs):
+        data = json.loads(request.body.decode('utf-8'))
+        print(data["id"])
+        item = Item.objects.get(id=data['id'])
+        print("Item: ", item)
+        order_item = OrderItem.objects.get(item=item)
+        order, added = OrderItem.objects.get_or_create(item=item)
+        return JsonResponse({'response': 'Added to cart successfully'})
+    
     def put(self, request, *args, **kwargs):
         data = json.loads(request.body.decode('utf-8'))
         order_item = OrderItem.objects.get(id=data["id"])
