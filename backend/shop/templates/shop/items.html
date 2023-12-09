@@ -14,9 +14,12 @@
             <div class="image"><img src="{{item.image.url}}"></div>
             <div class="title">{{item.name}}</div>
             <div class="price">{{item.price}} Per kg</div>
-            <a href="" class="cart-btn">Add to Cart</a>
+            <a href="" class="cart-btn" id="item-{{item.id}}">Add to Cart</a>
         </div>
     </a>
     {% endfor %}
 </div>
 {% endblock content %}
+{% block scripts %}
+<script src="{% static 'js/items.js' %}"></script>
+{% endblock scripts %}
