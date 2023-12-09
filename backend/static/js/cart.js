@@ -69,7 +69,7 @@ async function deleteItem(id) {
     const cartItem = document.querySelector(`#cart-item-${id}`);
     try {
         const response = await fetch(url, {
-            method: "PUT",
+            method: "DELETE",
             headers: {
                 'Content-Type': 'application/json',
                 'X-CSRFToken': csrftoken,
