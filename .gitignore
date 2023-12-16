@@ -6,3 +6,4 @@ backend/shop/__pycache__/
 backend/shop/migrations/
 backend/.env
 backend/static/
+backend/media/
