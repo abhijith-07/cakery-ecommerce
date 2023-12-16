@@ -5,3 +5,4 @@ backend/cakery/__pycache__/
 backend/shop/__pycache__/
 backend/shop/migrations/
 backend/.env
+backend/static/
