@@ -7,3 +7,5 @@ backend/shop/migrations/
 backend/.env
 backend/static/
 backend/media/
+backend/cakery/settings/__pycache__/
+backend/staticfiles_build/

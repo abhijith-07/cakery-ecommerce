@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+import os
+from django.conf import settings
 
 class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True)
@@ -74,3 +76,11 @@ class Gallery(models.Model):
 
     def __str__(self) -> str:
         return self.header_line
+    
+    def save(self, *args, **kwargs):
+        # Ensure the directory exists before saving the image
+        new_directory = os.path.join(settings.MEDIA_ROOT, 'gallery')
+        if not os.path.exists(new_directory):
+            os.makedirs(new_directory)
+
+        super().save(*args, **kwargs)
