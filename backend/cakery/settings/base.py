@@ -118,7 +118,7 @@ STORAGES = {
 
 STATIC_URL = "static/"
 
-MEDIA_URL = "media/"
+MEDIA_URL = "images/"
 
 
 # Default primary key field type
