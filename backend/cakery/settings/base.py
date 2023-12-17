@@ -107,7 +107,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
-MEDIA_URL = "images/"
+MEDIA_URL = "media/"
 
 
 # Default primary key field type
