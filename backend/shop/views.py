@@ -1,9 +1,18 @@
 import json
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from .models import Item, Category, Gallery, OrderItem
+from .forms import LoginForm
 
+class LoginView(View):
+    template = "shop/login.html"
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template)
+    
+    # def post(self, request, *args, **kwargs):
+    #     return redirect("index")
 
 class IndexView(View):
     template = "shop/index.html"
