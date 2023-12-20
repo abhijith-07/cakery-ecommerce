@@ -2,6 +2,16 @@ from .base import *
 
 DEBUG = False
 
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    # WhiteNoise to compresses files and hashes
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
+
 ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1']
 
 DATABASES = {

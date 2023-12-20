@@ -4,15 +4,29 @@ from django.shortcuts import render, redirect
 from django.views import View
 from .models import Item, Category, Gallery, OrderItem
 from .forms import LoginForm
+from django.contrib.auth import authenticate, login, logout 
 
 class LoginView(View):
     template = "shop/login.html"
 
     def get(self, request, *args, **kwargs):
-        return render(request, self.template)
+        form = LoginForm()
+        context = {'form': form}
+        return render(request, self.template, context=context)
     
-    # def post(self, request, *args, **kwargs):
-    #     return redirect("index")
+    def post(self, request, *args, **kwargs):
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = authenticate(request, username=username, password=password)
+            if user:
+                login(request, user)
+                return redirect("index")
+                
+def user_logout(request):
+    logout(request)
+    return redirect('login')
 
 class IndexView(View):
     template = "shop/index.html"

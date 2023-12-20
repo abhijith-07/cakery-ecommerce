@@ -16,3 +16,5 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_ROOT = BASE_DIR / "static" / "images"
+
+print("Running Locally...")
