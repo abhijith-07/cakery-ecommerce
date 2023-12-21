@@ -5,7 +5,7 @@ backend/cakery/__pycache__/
 backend/shop/__pycache__/
 backend/shop/migrations/
 backend/.env
-backend/static/
+backend/static/images/
 backend/media/
 backend/cakery/settings/__pycache__/
 backend/staticfiles_build/
