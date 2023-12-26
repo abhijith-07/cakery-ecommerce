@@ -3,6 +3,7 @@ from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.views import View
 from .models import Item, Category, Gallery, OrderItem
+from django.contrib.auth.forms import UserCreationForm
 from .forms import LoginForm
 from django.contrib.auth import authenticate, login, logout 
 
@@ -27,6 +28,19 @@ class LoginView(View):
 def user_logout(request):
     logout(request)
     return redirect('login')
+
+class RegisterView(View):
+    template = "shop/register.html"
+
+    def get(self, request, *args, **kwargs):
+        context = {'form': UserCreationForm}
+        return render(request, self.template, context=context)
+    
+    def post(self, request, *args, **kwargs):
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
 
 class IndexView(View):
     template = "shop/index.html"
