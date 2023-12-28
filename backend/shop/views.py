@@ -3,9 +3,9 @@ from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.views import View
 from .models import Item, Category, Gallery, OrderItem
-from django.contrib.auth.forms import UserCreationForm
-from .forms import LoginForm
+from .forms import LoginForm, CreateUserForm
 from django.contrib.auth import authenticate, login, logout 
+from django.http import Http404
 
 class LoginView(View):
     template = "shop/login.html"
@@ -33,14 +33,16 @@ class RegisterView(View):
     template = "shop/register.html"
 
     def get(self, request, *args, **kwargs):
-        context = {'form': UserCreationForm}
+        context = {'form': CreateUserForm}
         return render(request, self.template, context=context)
     
     def post(self, request, *args, **kwargs):
-        form = UserCreationForm(request.POST)
+        form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('index')
+        else:
+            raise Http404
 
 class IndexView(View):
     template = "shop/index.html"

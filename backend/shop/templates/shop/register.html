@@ -1,9 +1,45 @@
 {% extends './base.html' %}
+{% load static %}
+
+{% block extrahead %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'css/registerStyle.css' %}">
+{% endblock extrahead %}
 
 {% block content %}
-<form action="" method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">Register</button>
-</form>
+<div class="register-wrapper">
+    <h2 class="register-title">Register</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="row username">
+            <i class="fa fa-regular fa-user"></i>
+            {{form.username}}
+        </div>
+        <div class="row email">
+            <i class="fa fa-solid fa-envelope"></i>
+            {{form.email}}
+        </div>
+        <div class="row password1">
+            <i class="fa fa-key" aria-hidden="true"></i>
+            {{form.password1}}
+        </div>
+        <div class="row password2">
+            <i class="fa fa-key" aria-hidden="true"></i>
+            {{form.password2}}
+        </div>
+        <div class="row register-btn">
+            <input type="submit" value="Register" class="register-btn">
+        </div>
+    </form>
+</div>
 {% endblock content %}
+
+{% block scripts %}
+<script>
+    var formInputs = document.querySelectorAll('input')
+    formInputs[1].placeholder = 'Username'
+    formInputs[2].placeholder = 'Email'
+    formInputs[3].placeholder = 'Password'
+    formInputs[4].placeholder = 'Confirm Password'
+</script>
+{% endblock scripts %}
