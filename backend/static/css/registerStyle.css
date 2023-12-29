@@ -3,8 +3,7 @@
     background-color: #bc6100;
     width: 25%;
     margin: 5% auto;
-    height: 60vh;
-    padding: 1em;
+    padding: 2em 1em;
 }
 
 form .row i {
@@ -31,4 +30,8 @@ form input[type="submit"] {
     border: none;
     margin-top: 1em;
     padding-left: 0;
+}
+
+form .row p {
+    margin-top: 1rem;
 }
